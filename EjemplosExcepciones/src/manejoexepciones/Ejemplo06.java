@@ -24,7 +24,7 @@ public class Ejemplo06 {
             int valor2 = entrada.nextInt(); // se espera un valor entero
             int resultado = valor1 / valor2;
             double resultado2 = (double)resultado;
-            System.out.printf("Resultado %d", resultado2);
+            System.out.printf("Resultado %.2f", resultado2);
         }
         catch (InputMismatchException inputMismatchException) {
             

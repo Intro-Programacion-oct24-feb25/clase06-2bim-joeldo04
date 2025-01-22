@@ -21,7 +21,7 @@ public class Ejemplo02 {
         int valor2 = entrada.nextInt(); // se espera un valor entero
         int resultado = valor1 / valor2;
         
-        System.out.printf("Resultado %d", resultado);
+        System.out.printf("Resultado %d\n", resultado);
                
     }
 }
