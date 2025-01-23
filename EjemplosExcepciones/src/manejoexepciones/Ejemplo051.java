@@ -27,7 +27,11 @@ public class Ejemplo051 {
                 int resultado = valor1 / valor2;
 
                 System.out.printf("Resultado %d\n", resultado);
-                bandera = false;
+                bandera = false; 
+                // En este problema Bandera sirve para poder identificar cada 
+                //numero ingresado ya que si existe algun error nos llevara 
+                //a un catch y nos hara repetir hasta que se haga correctamente 
+                // si es verdadero sigue y si es falso no lo hara
             } catch (InputMismatchException inputMismatchException) {
 
                 System.out.printf("Existe un error de tipo %s\n",

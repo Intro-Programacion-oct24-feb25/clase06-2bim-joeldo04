@@ -37,7 +37,7 @@ public class Ejemplo12 {
 
                     resultados[i] = valor1 / valor2;
 
-                    bandera = false;
+                    bandera = false; 
                 } catch (ArithmeticException e) {
                     System.out.printf("(ArithmeticException) Ocurrió una "
                             + "excepción %s\n", e);
