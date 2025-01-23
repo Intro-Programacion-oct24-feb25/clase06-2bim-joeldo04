@@ -19,34 +19,37 @@ public class Ejemplo12 {
         números ingresados por teclado; el resultado de cada división debe ir 
         almacenandose en cada posición del arreglo. Considerar las excepciones
         posibles*/
-        
+
         Scanner entrada = new Scanner(System.in);
         System.out.println("Ingrese numero de cuantas divisones quiere realizar");
         int valor = entrada.nextInt();
-        int[] resultados = new int[valor];
+        int[] resultados = new int[valor];     
 
-        try {
-            for (int i = 0; i < valor; i++) {
-                System.out.println("Ingrese el dividendo");
-                int valor1 = entrada.nextInt();
-                System.out.println("Ingrese el divisor");
-                int valor2 = entrada.nextInt();
+        for (int i = 0; i < valor; i++) {
+            boolean bandera = true;
+            while (bandera) {
+                try {
+                    entrada.nextLine();
+                    System.out.println("Ingrese el dividendo");
+                    int valor1 = entrada.nextInt();
+                    System.out.println("Ingrese el divisor");
+                    int valor2 = entrada.nextInt();
 
-                int resultado = valor1 / valor2;
+                    resultados[i] = valor1 / valor2;
 
-                resultados[i] = resultado;
-                
-                System.out.printf("%d\n", resultados[i]);
+                    bandera = false;
+                } catch (ArithmeticException e) {
+                    System.out.printf("(ArithmeticException) Ocurrió una "
+                            + "excepción %s\n", e);
+                } catch (InputMismatchException inputMismatchException) {
+                    System.out.printf("(InputMismatchException) Ocurrió una "
+                            + "excepción %s\n", inputMismatchException);
+
+                }
             }
-            
-        } catch (ArithmeticException e) {
-            System.out.printf("(ArithmeticException) Ocurrió una "
-                    + "excepción %s\n", e);
-        } catch (InputMismatchException e) {
-            System.out.printf("(InputMismatchException) Ocurrió una "
-                    + "excepción %s\n", e);
-        } catch (Exception e) {
-            System.out.printf("Ocurrió una excepción %s\n", e);
+        }
+        for (int i = 0; i < valor; i++) {
+            System.out.printf("%d\n", resultados[i]);
         }
     }
 }
